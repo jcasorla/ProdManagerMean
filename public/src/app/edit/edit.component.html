@@ -1,0 +1,19 @@
+<div *ngIf="errors">
+    <p class="text-danger" *ngFor="let item of errors ">{{item}}</p>
+</div>
+    
+    <form (submit)="onSubmit()">
+        <div class="form-group">        
+            <p>Title: <input type="text" name="editProduct.title" [(ngModel)]="editProduct.title" /></p>
+        </div>
+        <div class="form-group">        
+            <p>Price: <input type="text" name="editProduct.price" [(ngModel)]="editProduct.price" /></p>
+        </div>
+        <div class="form-group">        
+            <p>Title: <input type="text" name="editProduct.url" [(ngModel)]="editProduct.url" /></p>
+        </div>
+        
+        
+        <button  class="btn btn-primary btn-sm" (click)="onSubmit()">Update</button>
+        <button  class="btn btn-danger btn-sm" [routerLink]="['/list']">Cancel</button>
+    </form>
